@@ -1,7 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-// import FeedbackOptions from './FeedbackOptions';
 import Section from '../Section/Section';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
@@ -32,31 +31,6 @@ class CounterFeedback extends React.Component {
     this.setState(prevState => ({ [labelButton]: prevState[labelButton] + 1 }));
   };
 
-  // incrementGood = event => {
-  //   console.log(event);
-  //   this.setState(prevState => {
-  //     return {
-  //       good: prevState.good + 1,
-  //     };
-  //   });
-  // };
-
-  // incrementNeutral = () => {
-  //   this.setState(prevState => {
-  //     return {
-  //       neutral: prevState.neutral + 1,
-  //     };
-  //   });
-  // };
-
-  // incrementBad = () => {
-  //   this.setState(prevState => {
-  //     return {
-  //       bad: prevState.bad + 1,
-  //     };
-  //   });
-  // };
-
   countTotalFeedback = () => {
     const totalFeedback = Object.values(this.state).reduce(
       (acc, value) => acc + value,
@@ -74,22 +48,9 @@ class CounterFeedback extends React.Component {
   };
 
   render() {
-    // const buttonName = Object.keys(this.state);
     return (
       <div className={styles.counter}>
-        {/* {console.log(buttonName)} */}
         <Section title="Please leave feedback">
-          {/* <div className={styles.button}>
-            <button type="button" onClick={this.incrementGood}>
-              Good
-            </button>
-            <button type="button" onClick={this.incrementNeutral}>
-              Neutral
-            </button>
-            <button type="button" onClick={this.incrementBad}>
-              Bad
-            </button>
-          </div> */}
           <FeedbackOptions
             options={this.state}
             onLeaveFeedback={this.onLeaveFeedback}
