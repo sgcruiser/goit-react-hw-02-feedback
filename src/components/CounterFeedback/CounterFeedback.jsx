@@ -25,7 +25,7 @@ class CounterFeedback extends React.Component {
     bad: this.props.initialBad,
   };
 
-  onLeaveFeedback = event => {
+  setLeaveFeedback = event => {
     const labelButton = event.target.textContent;
 
     this.setState(prevState => ({ [labelButton]: prevState[labelButton] + 1 }));
@@ -53,7 +53,7 @@ class CounterFeedback extends React.Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
-            onLeaveFeedback={this.onLeaveFeedback}
+            onLeaveFeedback={this.setLeaveFeedback}
           ></FeedbackOptions>
         </Section>
 
